@@ -19,9 +19,39 @@ async function createUser(email: string, password: string) {
   })
 }
 
+async function findTokenByUserId(userId: number) {
+  const token = await client.session.findFirst({
+    where: {
+      userId
+    }
+  })
+
+  return token
+}
+
+async function deleteTokenWithSameUserId(userId: number) {
+  await client.session.deleteMany({
+    where: {
+      userId
+    }
+  })
+}
+
+async function createToken(token: string, userId: number) {
+  await client.session.create({
+    data: {
+      token,
+      userId
+    }
+  })
+}
+
 const authRepository = {
   findUserByEmail,
-  createUser
+  createUser,
+  findTokenByUserId,
+  deleteTokenWithSameUserId,
+  createToken
 }
 
 export default authRepository;

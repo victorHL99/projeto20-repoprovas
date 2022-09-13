@@ -8,8 +8,14 @@ const authSchemaSignup = Joi.object({
   })
 })
 
+const authSchemaSignin = Joi.object({
+  email: Joi.string().email().required(),
+  password: Joi.string().min(6).required()
+})
+
 const authSchema = {
-  authSchemaSignup
+  authSchemaSignup,
+  authSchemaSignin
 }
 
 export default authSchema;
