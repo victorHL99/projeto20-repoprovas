@@ -21,7 +21,7 @@ async function signin(req: Request, res: Response) {
   const infoUser = await authService.verifyIfEmailExists(email, action)
   await authService.comparePassword(password, infoUser.password)
   const token = await authService.generateToken(infoUser.email, JWT_KEY) as string
-  // await authService.verifyIfExistTokenWithSameUserId(infoUser.id) // TODO if exist, delete to analyze if it is necessary
+  // await authService.verifyIfExistTokenWithSameUserId(infoUser.id) // TODO  to analyze if it is necessary
   await authService.deleteTokenWithSameUserId(infoUser.id)
   await authService.createToken(token, infoUser.id)
 

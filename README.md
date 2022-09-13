@@ -9,25 +9,24 @@
    <img src="https://img.shields.io/github/languages/count/SEU_NOME/NOME_DO_PROJETO?color=4dae71&style=flat-square" />
 </p>
 
-
-##  :clipboard: Descrição
+## :clipboard: Descrição
 
 - Desta vez, vamos implementar o RepoProvas, um sistema de compartilhamento de provas entre estudantes!
 - No RepoProvas qualquer pessoa pode procurar provas antigas de suas disciplinas e professores ou enviar provas antigas para ajudar os calouros :)
 - Se ao menos existisse no mercado uma [plataforma](https://respondeai.com.br) com provas resolvidas né? ☹️
 
-***
+---
 
-## :computer:	 Tecnologias e Conceitos
+## :computer: Tecnologias e Conceitos
 
 - REST APIs
 - JWTs & refresh tokens
 - Node.js
 - TypeScript
-- PostgreSql 
+- PostgreSql
 - Prisma
 
-***
+---
 
 ## :rocket: Rotas
 
@@ -42,10 +41,21 @@ POST /signup
          "confirmPassword": "Teste@teste1"
 }
 ```
-***
+
+```yml
+
+POST /signin
+    - Rota para realizar Login
+    - headers: {}
+    - body:{
+         "email":"devinho@dev.com",
+         "password":"Teste@teste1"
+}
+```
+
+---
 
 ## 🏁 Rodando a aplicação
-
 
 Primeiro, faça o clone desse repositório na sua maquina:
 
@@ -60,6 +70,7 @@ npm install
 ```
 
 Finalizado o processo, é só inicializar o servidor
+
 ```
 npm start
 ```
