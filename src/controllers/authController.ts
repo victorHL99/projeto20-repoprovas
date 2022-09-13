@@ -10,7 +10,7 @@ async function signup(req: Request, res: Response) {
   const hashPassword: string = await authService.encryptPassword(password)
   await authService.createUser(email, hashPassword)
 
-  res.status(200).send("User created");
+  res.status(201).send("User created");
 }
 
 const authController = {
