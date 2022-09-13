@@ -32,67 +32,25 @@
 ## :rocket: Rotas
 
 ```yml
-POST /cadastro
+
+POST /signup
     - Rota para cadastrar um novo usuário
     - headers: {}
     - body:{
-        "nome": "Lorem ipsum",
-        "email": "lorem@gmail.com",
-        "senha": "loremipsum"
+         "email":"devinho@dev.com",
+         "password":"Teste@teste1",
+         "confirmPassword": "Teste@teste1"
 }
-```
-    
-```yml 
-POST /login
-    - Rota para fazer login
-    - headers: {}
-    - body: {
-    "email": "lorem@gmail.com",
-    "senha": "loremipsum"
-    }
-```
-    
-```yml 
-GET /usuarios (autenticada)
-    - Rota para listar todos os usuários
-    - headers: { "Authorization": "Bearer $token" }
-    - body: {}
-```
-
-```yml
-GET /usuarios/:id (autenticada)
-    - Rota para listar um usuário pelo id
-    - headers: { "Authorization": "Bearer $token" }
-    - body: {}
-``` 
-
-```yml
-PUT /usuarios/:id (autenticada)
-    - Rota para atualizar um usuário pelo id
-    - headers: { "Authorization": "Bearer $token" }
-    - body: {
-        "nome": "Lorem ipsum2",
-        "email": "lorem2@gmail.com",
-        "senha": "loremipsum2"
-    }
-```
- 
-```yml
-DELETE /usuarios/:id (autenticada)
-    - Rota para deletar um usuário pelo id
-    - headers: { "Authorization": "Bearer $token" }
-    - body: {}
 ```
 ***
 
 ## 🏁 Rodando a aplicação
 
-Este projeto foi inicializado com o [Create React App](https://github.com/facebook/create-react-app), então certifique-se que voce tem a ultima versão estável do [Node.js](https://nodejs.org/en/download/) e [npm](https://www.npmjs.com/) rodando localmente.
 
 Primeiro, faça o clone desse repositório na sua maquina:
 
 ```
-git clone https://github.com/luanalessa/projeto-backend.git
+git clone https://github.com/victorHL99/projeto20-repoprovas.git
 ```
 
 Depois, dentro da pasta, rode o seguinte comando para instalar as dependencias.
