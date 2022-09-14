@@ -53,6 +53,26 @@ describe("Signin Tests suite", () => {
     expect(response.text).toEqual('"email" must be a valid email')
   })
 
+  // fail case - password is empty
+  it("should not carry out login with a empty password", async () => {
+    const response = await supertest(app).post('/signin').send({ ...login, password: '' })
+    expect(response.statusCode).toBe(422)
+    expect(response.text).toEqual('"password" is not allowed to be empty')
+  })
+
+  // fail case - email is empty
+  it("should not carry out login with a empty email", async () => {
+    const response = await supertest(app).post('/signin').send({ ...login, email: '' })
+    expect(response.statusCode).toBe(422)
+    expect(response.text).toEqual('"email" is not allowed to be empty')
+  })
+
+  // fail case - email and password are empty
+  it("should not carry out login with a empty email and password", async () => {
+    const response = await supertest(app).post('/signin').send({ ...login, email: '', password: '' })
+    expect(response.statusCode).toBe(422)
+    expect(response.text).toEqual("\"email\" is not allowed to be empty, \"password\" is not allowed to be empty")
+  })
 })
 
 afterAll(async () => {
