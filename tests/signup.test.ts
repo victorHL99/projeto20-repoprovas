@@ -1,5 +1,6 @@
 import supertest from 'supertest';
 import app from '../src/app'
+import client from '../src/config/database';
 
 import { SignupInterface } from '../src/types/authInterface'
 
@@ -13,6 +14,10 @@ const login = {
   confirmPassword: CONFIRM_PASSWORD
 } as SignupInterface
 
+beforeEach(async () => {
+  await client.$executeRaw`TRUNCATE TABLE users CASCADE`
+})
+
 describe("Signup Tests suite", () => {
 
   // sucess case
@@ -24,6 +29,7 @@ describe("Signup Tests suite", () => {
 
   // fail case - email already exists
   it("should not signup a new user with the same email", async () => {
+    await supertest(app).post(`/signup`).send(login)
     const response = await supertest(app).post(`/signup`).send(login)
     expect(response.statusCode).toBe(409)
     expect(response.text).toEqual('Email already exists')
@@ -43,4 +49,8 @@ describe("Signup Tests suite", () => {
     expect(response.text).toEqual('Passwords do not match')
   })
 
+})
+
+afterAll(async () => {
+  await client.$disconnect()
 })

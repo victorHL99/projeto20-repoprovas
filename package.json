@@ -7,7 +7,7 @@
     "build": "tsc && npx prisma generate && npx prisma migrate deploy",
     "start": "node dist/index.js",
     "dev": "nodemon src/index.ts",
-    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --no-cache"
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest -i --no-cache"
   },
   "keywords": [],
   "author": "",
