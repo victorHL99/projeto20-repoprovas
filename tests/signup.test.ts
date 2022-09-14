@@ -5,7 +5,7 @@ import client from '../src/config/database';
 import { SignupInterface } from '../src/types/authInterface'
 
 const EMAIL: string = `${new Date().getTime()}@test.com` // random email
-const PASSWORD: string = '12345678' // random password
+const PASSWORD: string = '12345678'
 const CONFIRM_PASSWORD: string = '12345678' // confirm password
 const WRONG_PASSWORD: string = '12356789' // wrong password
 const login = {
