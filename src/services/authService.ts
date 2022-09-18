@@ -1,5 +1,5 @@
-import authRepository from "../repositories/authRepository";
-import { TypeAction } from "../types/authInterface";
+import authRepository from "../repositories/authRepository.js";
+import { TypeAction } from "../types/authInterface.js";
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 

@@ -1,10 +1,10 @@
 import { Router } from 'express';
 
-import testsController from '../controllers/testsController';
-import schemaValidate from "../middlewares/schemaValidate";
-import tokenValidate from '../middlewares/tokenValidate';
+import testsController from '../controllers/testsController.js';
+import schemaValidate from "../middlewares/schemaValidate.js";
+import tokenValidate from '../middlewares/tokenValidate.js';
 
-import testsSchema from '../schemas/testsSchema';
+import testsSchema from '../schemas/testsSchema.js';
 
 const testsRouter = Router();
 

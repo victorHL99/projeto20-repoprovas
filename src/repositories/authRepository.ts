@@ -1,4 +1,4 @@
-import client from '../config/database'
+import client from '../config/database.js'
 
 async function findUserByEmail(email: string) {
   const user = await client.user.findFirst({

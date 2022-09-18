@@ -1,5 +1,5 @@
 import pkg from '@prisma/client'
-import "./setup"
+import "./setup.js"
 
 const { PrismaClient } = pkg
 const client = new PrismaClient()

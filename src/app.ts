@@ -3,10 +3,10 @@ import cors from 'cors'
 import 'express-async-errors'
 
 // import middlewares
-import errorHandlerMiddleware from './middlewares/errorHandlerMiddleware'
+import errorHandlerMiddleware from './middlewares/errorHandlerMiddleware.js'
 
 // import routes
-import indexRouter from './routes/index'
+import indexRouter from './routes/index.js'
 
 const app = express()
 
