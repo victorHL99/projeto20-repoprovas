@@ -8,9 +8,6 @@ async function createTest(req: Request, res: Response) {
   // verify if teacherDisciplineId exists
   await testsService.verifyIfTeacherDisciplineIdExists(teacherDisciplineId);
 
-  // verify if pdfUrl exists
-  await testsService.verifyIfPdfUrlExists(pdfUrl);
-
   // verify if name already exist with same teacherDisciplineId
   await testsService.verifyIfNameExists(name, teacherDisciplineId);
 
@@ -31,8 +28,15 @@ async function createTest(req: Request, res: Response) {
   res.status(201).send("Test created");
 }
 
+async function getAllTestsByDiscipline(req: Request, res: Response) {
+  const tests = await testsService.getAllTestsByDiscipline();
+
+  return res.status(200).json(tests);
+}
+
 const testsController = {
-  createTest
+  createTest,
+  getAllTestsByDiscipline
 }
 
 export default testsController;

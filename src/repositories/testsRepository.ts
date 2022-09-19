@@ -50,12 +50,39 @@ async function createTest(test: CreateTestInterface) {
   return result
 }
 
+
+async function getAllTestsByDiscipline() {
+  const result = await client.term.findMany({
+    include: {
+      disciplines: {
+        include: {
+          teacherDisciplines: {
+            include: {
+              teacher: true,
+              tests: {
+                include: {
+                  category: true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  })
+
+  return result
+
+}
+
 const testsRepository = {
   findTeacherDisciplineById,
   findCategoryById,
   findPdfUrl,
   findName,
-  createTest
+  createTest,
+  getAllTestsByDiscipline
 }
 
 export default testsRepository;

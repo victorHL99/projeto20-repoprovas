@@ -51,12 +51,19 @@ async function createTest(test: CreateTestInterface) {
   return result;
 }
 
+async function getAllTestsByDiscipline() {
+  const result = await testsRepository.getAllTestsByDiscipline();
+
+  return result;
+}
+
 const testsService = {
   verifyIfTeacherDisciplineIdExists,
   verifyIfCategoryIdExists,
   verifyIfPdfUrlExists,
   verifyIfNameExists,
-  createTest
+  createTest,
+  getAllTestsByDiscipline
 
 }
 
