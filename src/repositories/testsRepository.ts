@@ -1,4 +1,4 @@
-import client from '../config/database.js'
+import client from '../config/database'
 import { CreateTestInterface } from '../types/testsInterface.js'
 
 async function findTeacherDisciplineById(teacherDisciplineId: number) {

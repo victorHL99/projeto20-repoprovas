@@ -1,5 +1,5 @@
-import { CreateTestInterface } from './../types/testsInterface.js';
-import testsRepository from "../repositories/testsRepository.js";
+import { CreateTestInterface } from './../types/testsInterface';
+import testsRepository from "../repositories/testsRepository";
 
 async function verifyIfTeacherDisciplineIdExists(teacherDisciplineId: number) {
   const result = await testsRepository.findTeacherDisciplineById(teacherDisciplineId);

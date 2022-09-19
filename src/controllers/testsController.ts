@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import testsService from "../services/testsService.js";
-import { CreateTestInterface } from "../types/testsInterface.js";
+import testsService from "../services/testsService";
+import { CreateTestInterface } from "../types/testsInterface";
 
 async function createTest(req: Request, res: Response) {
   const { name, pdfUrl, categoryId, teacherDisciplineId } = req.body as CreateTestInterface;
