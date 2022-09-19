@@ -34,9 +34,16 @@ async function getAllTestsByDiscipline(req: Request, res: Response) {
   return res.status(200).json(tests);
 }
 
+async function getAllTestsByTeacher(req: Request, res: Response) {
+  const tests = await testsService.getAllTestsByTeacher();
+
+  return res.status(200).json(tests);
+}
+
 const testsController = {
   createTest,
-  getAllTestsByDiscipline
+  getAllTestsByDiscipline,
+  getAllTestsByTeacher
 }
 
 export default testsController;

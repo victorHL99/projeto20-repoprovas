@@ -76,13 +76,29 @@ async function getAllTestsByDiscipline() {
 
 }
 
+async function getAllTestsByTeacher() {
+  const result = await client.teacherDiscipline.findMany({
+    include: {
+      teacher: true,
+      discipline: true,
+      tests: {
+        include: {
+          category: true
+        }
+      }
+    }
+  })
+  return result
+}
+
 const testsRepository = {
   findTeacherDisciplineById,
   findCategoryById,
   findPdfUrl,
   findName,
   createTest,
-  getAllTestsByDiscipline
+  getAllTestsByDiscipline,
+  getAllTestsByTeacher
 }
 
 export default testsRepository;

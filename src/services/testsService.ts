@@ -57,13 +57,21 @@ async function getAllTestsByDiscipline() {
   return result;
 }
 
+async function getAllTestsByTeacher() {
+  const result = await testsRepository.getAllTestsByTeacher();
+
+  return result;
+}
+
+
 const testsService = {
   verifyIfTeacherDisciplineIdExists,
   verifyIfCategoryIdExists,
   verifyIfPdfUrlExists,
   verifyIfNameExists,
   createTest,
-  getAllTestsByDiscipline
+  getAllTestsByDiscipline,
+  getAllTestsByTeacher
 
 }
 
